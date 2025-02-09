@@ -1,29 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 
-public class Clear : MonoBehaviour
+public class GameOver : MonoBehaviour
 {
-    public bool Clear_flag;
+    [SerializeField] GameObject Player;
+    public bool Over_flag;
     // Start is called before the first frame update
     void Start()
     {
-        Clear_flag = false; 
+        Over_flag = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
-    private void OnCollisionEnter(Collision col)
+    void Judge_slope_x()
     {
-        if (col.gameObject.tag == "Player")
+        if(Player.transform.localEulerAngles.x >= 180 || Player.transform.localEulerAngles.x <= -180)
         {
             SceneManager.LoadScene("Result");
-            Clear_flag = true;
+            Over_flag = true;
         }
     }
 }

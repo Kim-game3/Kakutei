@@ -71,6 +71,25 @@ public class PlayerController : MonoBehaviour
             Flag_f = false;
         }
 
+        if(Flag_s)
+        {
+            if(Flag_f)
+            {
+                transform.Translate(Side, 0, Flont);
+                Flag_f = false;
+            }
+            else if(Flag_fb)
+            {
+                transform.Translate(Side, 0, -Flont);
+                Flag_fb = false;
+            }
+            else
+            {
+                transform.Translate(Side, 0, 0);
+            }
+            Flag_s = false;
+        }
+
         if(Flag_fb)
         {
             if(Flag_s)
@@ -88,6 +107,25 @@ public class PlayerController : MonoBehaviour
                 transform.Translate(0, 0, -Flont);
             }
             Flag_fb = false;
+        }
+
+        if(Flag_sb)
+        {
+            if(Flag_f)
+            {
+                transform.Translate(-Side, 0, Flont);
+                Flag_f = false;
+            }
+            else if(Flag_fb)
+            {
+                transform.Translate(-Side, 0, -Flont);
+                Flag_fb = false;
+            }
+            else
+            {
+                transform.Translate(-Side, 0, 0);
+            }
+            Flag_sb = false;
         }
     }
 
