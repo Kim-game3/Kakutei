@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class Clear : MonoBehaviour
 {
-    public bool Clear_flag;
+    
     // Start is called before the first frame update
     void Start()
     {
-        Clear_flag = false; 
+         
     }
 
     // Update is called once per frame
@@ -22,8 +22,7 @@ public class Clear : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene("Result");
-            Clear_flag = true;
+            SceneManager.LoadScene("Clear");
         }
     }
 }

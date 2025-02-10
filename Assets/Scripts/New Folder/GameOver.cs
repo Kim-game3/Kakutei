@@ -7,25 +7,31 @@ using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
 {
     [SerializeField] GameObject Player;
-    public bool Over_flag;
     // Start is called before the first frame update
     void Start()
     {
-        Over_flag = false;
+    }
+
+    private bool Is_Side()
+    {
+        float angle = Vector3.Angle(transform.up, Vector3.up);
+
+        return angle >= 90f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        move_Gameover();
     }
 
-    void Judge_slope_x()
+    void move_Gameover()
     {
-        if(Player.transform.localEulerAngles.x >= 180 || Player.transform.localEulerAngles.x <= -180)
+        if(Is_Side())
         {
-            SceneManager.LoadScene("Result");
-            Over_flag = true;
+            SceneManager.LoadScene("GameOver");
         }
     }
+
+    
 }
