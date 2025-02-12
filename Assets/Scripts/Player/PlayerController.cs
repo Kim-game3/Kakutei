@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Tooltip("前方向へ進むときの速度")]
     [SerializeField] private float Flont;
-    [SerializeField]private float Side;
-    //private float Distance;
-    //private float rad;
+
+    [Tooltip("横方向へ進むときの速度")]
+    [SerializeField] private float Side;
+
+    [Tooltip("加算される角度")]
+    [SerializeField] private float Rad;
 
     private bool Flag_f = false;
     private bool Flag_fb = false;
