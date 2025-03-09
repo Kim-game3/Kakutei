@@ -251,7 +251,6 @@ GameObject:
   m_Component:
   - component: {fileID: 447732561}
   - component: {fileID: 447732556}
-  - component: {fileID: 447732562}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -289,19 +288,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &447732562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 447732555}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 244e7067d04ea244bbebe6cb1a2dbfb4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 447732555}
 --- !u!1 &475155993
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,6 +440,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 1255165668}
   _tracker: {fileID: 475155996}
+--- !u!1 &518012505
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 518012506}
+  m_Layer: 0
+  m_Name: PowerPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &518012506
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518012505}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.525, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1255165668}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &560587595 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2700529601822000510, guid: c10c84e840ef8db44a5fb3ffcc68896b,
@@ -672,6 +689,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 920381244}
+  - component: {fileID: 920381245}
   m_Layer: 0
   m_Name: GameSetManager
   m_TagString: Untagged
@@ -694,6 +712,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1508102559}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &920381245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920381243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 244e7067d04ea244bbebe6cb1a2dbfb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1255165668}
 --- !u!1 &1073392291 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2700529601822000510, guid: c10c84e840ef8db44a5fb3ffcc68896b,
@@ -755,7 +786,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1255165663}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 0.01
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -772,7 +803,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 32
   m_CollisionDetection: 0
 --- !u!136 &1255165665
 CapsuleCollider:
@@ -856,10 +887,11 @@ Transform:
   m_GameObject: {fileID: 1255165663}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.05500732, y: 1.07, z: -10.097434}
+  m_LocalPosition: {x: -0.05500732, y: 1.05, z: -10.097434}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 518012506}
   - {fileID: 1343739721}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1056,6 +1088,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2080430660}
   - component: {fileID: 2080430661}
+  - component: {fileID: 2080430662}
   m_Layer: 0
   m_Name: Move
   m_TagString: Untagged
@@ -1092,6 +1125,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 1255165668}
   _speed: 4
+--- !u!114 &2080430662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080430659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3928bcfe14bb4424e9dcbc780e340260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fallDownObj: {fileID: 1255165664}
+  _power: 0.07
+  _addPowerPos: {fileID: 518012506}
 --- !u!1001 &1252535304714317337
 PrefabInstance:
   m_ObjectHideFlags: 0

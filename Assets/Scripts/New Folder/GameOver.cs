@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
-    [SerializeField] GameObject Player;
+    [SerializeField] Transform player;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +14,7 @@ public class GameOver : MonoBehaviour
 
     private bool Is_Side()
     {
-        float angle = Vector3.Angle(transform.up, Vector3.up);
+        float angle = Vector3.Angle(player.up, Vector3.up);
 
         return angle >= 90f;
     }
