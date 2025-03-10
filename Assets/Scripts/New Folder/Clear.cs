@@ -18,9 +18,9 @@ public class Clear : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision col)
+    private void OnTriggerEnter(Collider other)
     {
-        if (col.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
             SceneManager.LoadScene("Clear");
         }
