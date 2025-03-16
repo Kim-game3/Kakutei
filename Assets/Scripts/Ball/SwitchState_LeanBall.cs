@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,27 +8,51 @@ public class SwitchState_LeanBall : MonoBehaviour
 {
     [Header("初期状態")]
     [SerializeField] EState_LeanBall _firstState;
-    [Header("転がり状態の時間(s)")]
-    [SerializeField] RandomGetFloat _goFlowTime;//転がり状態の時間
-    [Header("ゴールに向かう状態の時間(s)")]
-    [SerializeField] RandomGetFloat _moveToGoalTime;//ゴールに向かう状態の時間
-    [SerializeField] GoFlowState_LeanBall _goFlow;//転がり状態
-    [SerializeField] MoveToGoalState_LeanBall _moveToGoal;//ゴールに向かう状態
+    [Header("状態ごとの時間")]
+    [SerializeField] StateTime_LeanBall _stateTime;
+    [Header("ボールのステートマシンを動かす機能")]
+    [SerializeField] RunStateMachine_LeanBall _runStateMachine;
 
-    StateMachine _stateMachine;//ステートマシン
+    EState_LeanBall _currentState;//現在の状態
+    Coroutine _coroutine;
 
-    private void Start()
+    private void Awake()
     {
-        //ステートマシンの初期化
+        _currentState = _firstState;
     }
 
-    private void Update()
+    private void OnEnable()
     {
-        _stateMachine.Update();
+        _coroutine=StartCoroutine(StateCoroutine());//コルーチンの発動
     }
 
-    void ChangeState()
+    private void OnDisable()
     {
+        StopCoroutine(_coroutine);
+    }
 
+    IEnumerator StateCoroutine()
+    {
+        while(true)
+        {
+            float waitTime = _stateTime.GetStateTime(_currentState);//現在の状態から何秒待つか決める
+            yield return new WaitForSeconds(waitTime);//待つ
+
+            ChangeState();//状態変化
+        }
+    }
+
+    void ChangeState()//状態変化
+    {
+        //状態を一つ進める
+        int stateNum = (int)_currentState;
+        stateNum++;
+        stateNum %= Enum.GetValues(typeof(EState_LeanBall)).Length;
+        _currentState = (EState_LeanBall)stateNum;
+
+        Debug.Log(_currentState+"に変化しました");
+
+        //ステートマシンの状態を変更
+        _runStateMachine.ChangeState(_currentState);
     }
 }

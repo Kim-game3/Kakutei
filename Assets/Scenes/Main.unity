@@ -1021,6 +1021,7 @@ GameObject:
   - component: {fileID: 1500011252}
   - component: {fileID: 1500011251}
   - component: {fileID: 1500011256}
+  - component: {fileID: 1500011257}
   m_Layer: 7
   m_Name: LeanBall
   m_TagString: Untagged
@@ -1148,18 +1149,32 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500011250}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b018f00445d680b4fbc6ea32112c33be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _firstState: 0
-  _goFlowTime:
-    _min: 0
-    _max: 0
-  _moveToGoalTime:
-    _min: 0
-    _max: 0
+  _stateTime:
+    _goFlowTime:
+      _min: 2
+      _max: 3
+    _moveToGoalTime:
+      _min: 5
+      _max: 6
+  _runStateMachine: {fileID: 1500011257}
+--- !u!114 &1500011257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500011250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d067d88da51988a449a51f07a66b48f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1508102558
 GameObject:
   m_ObjectHideFlags: 0

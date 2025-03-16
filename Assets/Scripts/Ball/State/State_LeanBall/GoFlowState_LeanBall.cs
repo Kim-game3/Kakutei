@@ -8,7 +8,7 @@ public class GoFlowState_LeanBall : IState
 {
     public void OnEnter()
     {
-
+        Debug.Log("¡‚©‚ç“]‚ª‚é‚æ");
     }
 
     public void OnUpdate()

@@ -8,7 +8,7 @@ public class MoveToGoalState_LeanBall : IState
 {
     public void OnEnter()
     {
-
+        Debug.Log("ƒS[ƒ‹‚ÉŒü‚©‚¤‚æ");
     }
 
     public void OnUpdate()
