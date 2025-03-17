@@ -1156,12 +1156,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _firstState: 0
   _stateTime:
-    _goFlowTime:
-      _min: 2
-      _max: 3
-    _moveToGoalTime:
-      _min: 5
-      _max: 6
+    _stateTime:
+      _element_GoFlow:
+        _min: 2
+        _max: 3
+      _element_MoveToGoal:
+        _min: 5
+        _max: 6
   _runStateMachine: {fileID: 1500011257}
 --- !u!114 &1500011257
 MonoBehaviour:

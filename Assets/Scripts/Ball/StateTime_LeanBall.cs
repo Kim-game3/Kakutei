@@ -6,19 +6,12 @@ using UnityEngine;
 [System.Serializable]
 public class StateTime_LeanBall
 {
-    [Header("“]‚ª‚èó‘Ô‚ÌŠÔ(s)")]
-    [SerializeField] RandomGetFloat _goFlowTime;//“]‚ª‚èó‘Ô‚ÌŠÔ
-    [Header("ƒS[ƒ‹‚ÉŒü‚©‚¤ó‘Ô‚ÌŠÔ(s)")]
-    [SerializeField] RandomGetFloat _moveToGoalTime;//ƒS[ƒ‹‚ÉŒü‚©‚¤ó‘Ô‚ÌŠÔ
+    [Header("ó‘Ô‚ÌŒp‘±ŠÔ(s)")]
+    [SerializeField] Mapper_State_LeanBall<RandomGetFloat> _stateTime;
 
     //ó‘Ô‚ÌŠÔ‚ğæ“¾
     public float GetStateTime(EState_LeanBall state)
     {
-        switch (state)
-        {
-            case EState_LeanBall.GoFlow: return _goFlowTime.Get(); 
-            case EState_LeanBall.MoveToGoal: return _moveToGoalTime.Get();
-            default: Debug.Log("’è‹`‚³‚ê‚Ä‚È‚¢ó‘Ô‚Å‚·I"); return 0;
-        }
+        return _stateTime.Get(state).Get();
     }
 }

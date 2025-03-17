@@ -16,6 +16,11 @@ public class SwitchState_LeanBall : MonoBehaviour
     EState_LeanBall _currentState;//Œ»İ‚Ìó‘Ô
     Coroutine _coroutine;
 
+    public EState_LeanBall CurrentState
+    {
+        get { return _currentState; }
+    }
+
     private void Awake()
     {
         _currentState = _firstState;
