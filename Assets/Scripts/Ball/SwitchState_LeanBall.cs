@@ -24,6 +24,7 @@ public class SwitchState_LeanBall : MonoBehaviour
     private void Awake()
     {
         _currentState = _firstState;
+        _runStateMachine.ChangeState(_currentState);
     }
 
     private void OnEnable()
