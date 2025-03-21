@@ -1300,11 +1300,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2080430660}
   - component: {fileID: 2080430661}
-  - component: {fileID: 2080430662}
-  - component: {fileID: 2080430663}
-  - component: {fileID: 2080430664}
   - component: {fileID: 2080430666}
   - component: {fileID: 2080430665}
+  - component: {fileID: 2080430667}
   m_Layer: 6
   m_Name: Move
   m_TagString: Untagged
@@ -1340,52 +1338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 1255165668}
-  _speed: 4
---- !u!114 &2080430662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2080430659}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3928bcfe14bb4424e9dcbc780e340260, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _fallDownObj: {fileID: 1255165664}
-  _power: 0.05
-  _addPowerPos: {fileID: 518012506}
---- !u!114 &2080430663
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2080430659}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 399594211e807fd43a8e13455d7a9261, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _shiftObj: {fileID: 1255165664}
-  _maxDistance: 1.5
-  _speed: 0.5
---- !u!114 &2080430664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2080430659}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9699961ec8d699e4fae69b6259f937fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rotateObj: {fileID: 1255165668}
-  _acceleration: 20
-  _maxSpeed: 30
+  _speed: 1.2
 --- !u!114 &2080430665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1415,6 +1368,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _leanBall: {fileID: 1500011255}
+--- !u!114 &2080430667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080430659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b27f586e9b304b540b99a120b85494c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 1255165668}
+  _speed: 0.6
+  _distanceFromLeanBall: {fileID: 2080430666}
 --- !u!1001 &1252535304714317337
 PrefabInstance:
   m_ObjectHideFlags: 0
