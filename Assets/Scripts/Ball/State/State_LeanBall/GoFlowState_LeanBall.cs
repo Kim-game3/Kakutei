@@ -14,6 +14,9 @@ public class GoFlowState_LeanBall : IState
     {
         _ballAgent.enabled = false;
         _ballRigid.isKinematic = false;
+
+        //ƒ{[ƒ‹‚ğƒ‰ƒ“ƒ_ƒ€‚È•ûŒü‚É”ò‚Î‚·
+
         Debug.Log("¡‚©‚ç“]‚ª‚é‚æ");
     }
 

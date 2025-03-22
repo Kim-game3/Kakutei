@@ -33,4 +33,12 @@ public class RandomGetFloat
 
         return Random.Range(_min, _max);
     }
+
+    public RandomGetFloat(float min,float max)//コンストラクタ
+    {
+        _min = min;
+        _max = max;
+    }
+
+    public RandomGetFloat() { }//デフォルトコンストラクタ
 }

@@ -34,4 +34,12 @@ public class RandomGetInt
         //int(整数)型の場合は最大値を1多くしなければ、最大値も含まれて返されない
         return Random.Range(_min, _max+1);
     }
+
+    public RandomGetInt(int min,int max)//コンストラクタ
+    {
+        _min = min;
+        _max = max;
+    }
+
+    public RandomGetInt() { }//デフォルトコンストラクタ
 }
