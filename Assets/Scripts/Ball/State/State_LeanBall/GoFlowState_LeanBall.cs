@@ -7,6 +7,9 @@ using UnityEngine.AI;
 [System.Serializable]
 public class GoFlowState_LeanBall : IState
 {
+    [Header("ボールをランダムな方向に飛ばす機能の設定")]
+    [SerializeField] AddForceRandomDirection _addForceRandomDirection;
+    [Header("必要なコンポーネント")]
     [SerializeField] NavMeshAgent _ballAgent;
     [SerializeField] Rigidbody _ballRigid;
 
@@ -14,6 +17,9 @@ public class GoFlowState_LeanBall : IState
     {
         _ballAgent.enabled = false;
         _ballRigid.isKinematic = false;
+
+        _addForceRandomDirection.AddForce_Random();//ボールをランダムな方向に飛ばす
+
         Debug.Log("今から転がるよ");
     }
 

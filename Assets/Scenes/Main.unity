@@ -273,7 +273,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 237109770}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc80d7abb2a83934e81391adb2e781b5, type: 3}
   m_Name: 
@@ -1084,7 +1084,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500011250}
   serializedVersion: 4
-  m_Mass: 0.0001
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -1101,7 +1101,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!135 &1500011252
 SphereCollider:
@@ -1131,7 +1131,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500011250}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1224,6 +1224,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _goFlow:
+    _addForceRandomDirection:
+      _targetTransform: {fileID: 1500011255}
+      _targetRigidBody: {fileID: 1500011251}
+      _power:
+        _min: 1.5
+        _max: 2.5
+      _angle_AddForce:
+        _basisAngle: 120
+        _range: 240
+        _rangeDirection: -1
     _ballAgent: {fileID: 1500011258}
     _ballRigid: {fileID: 1500011251}
   _moveToGoal:
